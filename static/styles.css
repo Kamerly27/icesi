@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* CONTENEDOR */
+.login-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* IMAGEN */
+.left {
+    width: 60%;
+    height: 100vh;
+}
+
+.left img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+
+    /* 🔥 AQUÍ ESTÁ LA CLAVE */
+    object-position: left center; /* mueve la imagen */
+}
+
+/* FORMULARIO */
+.right {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-box {
+    width: 280px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0a6c7d;
+    color: white;
+    border: none;
+}

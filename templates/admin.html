@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<h2>Matricular Estudiante</h2>
+
+<form method="POST" action="/crear">
+
+<input name="documento" placeholder="Número de documento">
+<input name="nombre" placeholder="Nombre completo">
+<input name="correo" placeholder="Correo">
+<input name="programa" placeholder="Programa académico">
+<input name="resolucion" placeholder="Resolución del programa">
+
+<select name="estado">
+    <option value="Activo">Activo</option>
+    <option value="Inactivo">Inactivo</option>
+</select>
+
+<br><br>
+
+<button style="background:green; color:white; padding:10px;">
+    Matricular
+</button>
+
+</form>
+
+<hr>
+
+<h3>Estudiantes registrados</h3>
+
+{% for e in estudiantes %}
+<p>{{ e[1] }} - {{ e[0] }} - {{ e[3] }} - {{ e[4] }}</p>
+{% endfor %}
+
+</body>
+</html>

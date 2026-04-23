@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body style="
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-image: url('{{ url_for('static', filename='fondo.jpg') }}');
+    background-size: cover;
+    background-position: center;
+">
+
+<!-- 🔥 TARJETA CENTRADA -->
+<div style="
+    width:420px;
+    background: rgba(255,255,255,0.95);
+    border-radius:12px;
+    box-shadow:0px 4px 20px rgba(0,0,0,0.3);
+    overflow:hidden;
+">
+
+    <!-- HEADER -->
+    <div style="background:#0f6c7d; color:white; padding:15px;">
+        <h3 style="margin:0;">{{ estudiante.nombre }}</h3>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div style="padding:20px;">
+
+        <p><b>Documento:</b> {{ estudiante.documento }}</p>
+        <p><b>Correo:</b> {{ estudiante.correo }}</p>
+        <p><b>Programa:</b> {{ estudiante.programa }}</p>
+
+        <p><b>Estado:</b> 
+            <span style="color:{{ 'green' if estudiante.estado == 'Activo' else 'red' }}">
+                {{ estudiante.estado }}
+            </span>
+        </p>
+
+        <p><b>Resolución:</b> {{ estudiante.resolucion }}</p>
+
+        <br>
+
+        <button style="width:100%; padding:10px;">Eventos disponibles</button>
+
+        <br><br>
+        <a href="/salir">Cerrar sesión</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
